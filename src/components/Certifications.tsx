@@ -135,17 +135,33 @@ export const Certifications: React.FC = () => {
 
     if (lowerIssuer.includes('tryhackme')) {
       return (
-        <div className="flex items-center justify-center h-12">
-          <svg viewBox="0 0 100 45" className="h-10 w-auto fill-none">
+        <div className="flex items-center justify-center h-14">
+          <svg viewBox="0 0 170 100" className="h-full w-auto text-zinc-900 dark:text-white">
             {/* Cloud Outline */}
-            <path d="M 22 28 A 6 6 0 0 1 18 18 A 8 8 0 0 1 31 13 A 7 7 0 0 1 42 21 A 6 6 0 0 1 38 28 Z" stroke="#e63946" strokeWidth="2.5" />
-            {/* Mock digital text inside cloud */}
-            <text x="22" y="21" fontSize="4" fill="white" fontFamily="monospace">10.10</text>
-            <text x="21" y="25" fontSize="4" fill="#e63946" fontFamily="monospace">1110</text>
-            <text x="24" y="29" fontSize="4" fill="white" fontFamily="monospace">0101</text>
-            {/* Stacked text: Try Hack Me */}
-            <text x="46" y="20" fontSize="11" fontFamily="sans-serif" fontWeight="900" fill="white" stroke="none">Try</text>
-            <text x="46" y="32" fontSize="11" fontFamily="sans-serif" fontWeight="900" fill="white" stroke="none">HackMe</text>
+            <path d="M 40 46 L 15 46 A 12 12 0 0 1 12 24 A 18 18 0 0 1 45 12 A 15 15 0 0 1 73 24 A 10 10 0 0 1 68 42" stroke="#c21818" strokeWidth="5" strokeLinecap="round" strokeLinejoin="round" fill="none" />
+            
+            {/* Numbers */}
+            <g fontFamily="monospace" fontWeight="900" fontSize="13" letterSpacing="-0.5">
+              <text x="42" y="38" fill="#c21818">10</text>
+              <text x="64" y="38" fill="#c21818">10</text>
+              
+              <text x="42" y="52" fill="currentColor">1110</text>
+              
+              <text x="41" y="64" fill="#c21818">0101</text>
+              <text x="69" y="64" fill="currentColor" fontSize="10">01</text>
+              
+              <text x="41" y="75" fill="currentColor" fontSize="9">01</text>
+              <text x="56" y="75" fill="#c21818" fontSize="11">010</text>
+              
+              <text x="50" y="86" fill="#c21818" fontSize="9">01</text>
+            </g>
+            
+            {/* Try Hack Me Text */}
+            <g fontFamily="sans-serif" fontWeight="900" fontSize="31" letterSpacing="-0.5">
+              <text x="86" y="34" fill="currentColor">Try</text>
+              <text x="86" y="62" fill="#c21818">Hack</text>
+              <text x="86" y="90" fill="currentColor">Me</text>
+            </g>
           </svg>
         </div>
       );
@@ -169,8 +185,8 @@ export const Certifications: React.FC = () => {
 
     if (lowerIssuer.includes('nptel')) {
       return (
-        <div className="flex items-center justify-center h-12">
-          <svg viewBox="0 0 100 45" className="h-10 w-auto fill-none" stroke="currentColor" strokeWidth="1.5">
+        <div className="flex items-center justify-center h-16">
+          <svg viewBox="0 0 100 45" className="h-full w-auto fill-none" stroke="currentColor" strokeWidth="1.5">
             {/* NPTEL Circle Radial Ring */}
             <circle cx="50" cy="16" r="9" stroke="#f59e0b" strokeWidth="1.5" strokeDasharray="1,1" />
             <path d="M 50 7 L 50 25 M 41 16 L 59 16 M 44 10 L 56 22 M 44 22 L 56 10" stroke="#b91c1c" strokeWidth="1" />
@@ -183,8 +199,8 @@ export const Certifications: React.FC = () => {
 
     if (lowerIssuer.includes('codtech')) {
       return (
-        <div className="flex items-center justify-center h-12">
-          <svg viewBox="0 0 100 45" className="h-10 w-auto fill-current text-[#e05a00]">
+        <div className="flex items-center justify-center h-16">
+          <svg viewBox="0 0 100 45" className="h-full w-auto fill-current text-[#e05a00]">
             {/* CT text */}
             <text x="18" y="24" fontSize="24" fontFamily="sans-serif" fontWeight="900" fontStyle="italic" fill="white" className="fill-gray-900 dark:fill-white">C</text>
             <text x="35" y="24" fontSize="24" fontFamily="sans-serif" fontWeight="900" fontStyle="italic" fill="#e05a00">T</text>
