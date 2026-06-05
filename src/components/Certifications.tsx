@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Award, ArrowUpRight, ArrowDown, Calendar, ShieldCheck } from 'lucide-react';
+import { Award, Calendar, ShieldCheck } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 
 interface Certification {
@@ -14,7 +14,7 @@ interface Certification {
 }
 
 export const Certifications: React.FC = () => {
-  const [showAll, setShowAll] = useState(false);
+  const [selectedCategory, setSelectedCategory] = useState('All');
 
   const certifications: Certification[] = [
     {
@@ -122,12 +122,12 @@ export const Certifications: React.FC = () => {
     }
   ];
 
-  // Show featured cards (and include Data Visualization with R + NPTEL + CodTech) by default
-  const displayedCerts = showAll
-    ? certifications
-    : certifications.filter(
-        (c) => c.featured
-      );
+  const displayedCerts = certifications.filter(c => {
+    if (selectedCategory === 'All') return true;
+    if (selectedCategory === 'Cybersecurity') return c.category === 'Cybersecurity';
+    if (selectedCategory === 'Frontend') return c.category === 'Frontend';
+    return c.category !== 'Cybersecurity' && c.category !== 'Frontend';
+  });
 
   // Custom Inline Logo Renderers
   const renderIssuerLogo = (issuer: string) => {
@@ -249,13 +249,17 @@ export const Certifications: React.FC = () => {
             </p>
           </div>
           
-          <button
-            onClick={() => setShowAll(!showAll)}
-            className="flex items-center gap-1 text-sm font-medium text-blue-400 hover:text-blue-300 transition-colors border border-blue-500/30 hover:border-blue-500/60 px-4 py-2 rounded-lg bg-blue-500/5"
-          >
-            {showAll ? 'Show Featured' : 'View All Certifications'}
-            <ArrowUpRight className="h-4 w-4" />
-          </button>
+          <div className="flex flex-wrap gap-2">
+            {['All', 'Cybersecurity', 'Frontend', 'Others'].map(cat => (
+              <button
+                key={cat}
+                onClick={() => setSelectedCategory(cat)}
+                className={`px-4 py-1.5 rounded-full text-xs font-medium transition-all ${selectedCategory === cat ? 'bg-blue-500 text-white shadow-md' : 'bg-gray-100 dark:bg-zinc-800 text-gray-600 dark:text-zinc-300 hover:bg-gray-200 dark:hover:bg-zinc-700'}`}
+              >
+                {cat}
+              </button>
+            ))}
+          </div>
         </div>
 
         {/* Grid */}

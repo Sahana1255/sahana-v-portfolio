@@ -6,7 +6,7 @@ import { StatsSection } from './components/StatsSection';
 import { AboutAndSkills } from './components/AboutAndSkills';
 import { RelevantExperience } from './components/RelevantExperience';
 import { FeaturedProject } from './components/FeaturedProject';
-import { Education } from './components/Education';
+
 import { Certifications } from './components/Certifications';
 import { Footer } from './components/Footer';
 
@@ -115,27 +115,22 @@ function App() {
         {/* About Me & Categorised Skills Grid */}
         <AboutAndSkills />
 
-        {/* Relevant Experience & Featured Projects side-by-side Layout */}
+        {/* Relevant Experience & Featured Projects Stacked Layout */}
         <section id="experience" className="py-12 border-t border-gray-150 dark:border-zinc-900/50">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
-              
-              {/* Relevant Experience Timeline (6 Columns Left) */}
-              <div id="timeline" className="lg:col-span-6">
-                <RelevantExperience />
-              </div>
-
-              {/* Featured Project Widget (6 Columns Right) */}
-              <div id="projects" className="lg:col-span-6">
-                <FeaturedProject />
-              </div>
-
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
+            
+            {/* Relevant Experience Timeline (Full Width) */}
+            <div id="timeline">
+              <RelevantExperience />
             </div>
+
+            {/* Featured Project Widget (Full Width) */}
+            <div id="projects">
+              <FeaturedProject />
+            </div>
+
           </div>
         </section>
-
-        {/* Horizontal Education Panel */}
-        <Education />
 
         {/* Grid of Certifications */}
         <Certifications />

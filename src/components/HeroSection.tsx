@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Download, Terminal, Shield, Mail, Phone, MapPin } from 'lucide-react';
+import { Download, Terminal, Shield, Mail, Phone, MapPin, CornerRightDown } from 'lucide-react';
 import profile from '../assets/profile.jpg';
 
 export const HeroSection: React.FC = () => {
@@ -82,9 +82,25 @@ export const HeroSection: React.FC = () => {
                 href="#contact"
                 className="flex items-center gap-2 px-5 py-3 rounded-lg bg-blue-600 hover:bg-blue-700 dark:bg-cyber-accent dark:hover:bg-emerald-400 text-white dark:text-black font-semibold text-sm transition-all duration-300 dark:shadow-[0_0_15px_rgba(0,255,102,0.2)] dark:hover:shadow-[0_0_20px_rgba(0,255,102,0.4)]"
               >
-                <Download className="h-4 w-4" />
+                <Download className="h-4 w-4 group-hover:-translate-y-1 transition-transform" />
                 Download Resume
               </a>
+              
+              {/* Bouncing Arrow Pointing to Resume */}
+              <motion.div 
+                initial={{ opacity: 0, x: -20 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ delay: 1 }}
+                className="hidden md:flex items-center text-blue-600 dark:text-emerald-400 ml-2"
+              >
+                <motion.div
+                  animate={{ x: [0, 10, 0] }}
+                  transition={{ repeat: Infinity, duration: 1.5, ease: "easeInOut" }}
+                >
+                  <CornerRightDown className="h-6 w-6 transform rotate-45" />
+                </motion.div>
+                <span className="text-xs font-mono font-bold ml-2">Click Here!</span>
+              </motion.div>
               <a
                 href="https://linkedin.com/in/sahana-v1255/"
                 target="_blank"
@@ -135,17 +151,21 @@ export const HeroSection: React.FC = () => {
             className="lg:col-span-5 flex flex-col items-center justify-center"
           >
             <div className="relative group">
-              {/* Outer Neon Glow Ring (Rectangular) */}
-              <div className="absolute -inset-1 bg-gradient-to-r from-blue-500 to-cyber-accent rounded-2xl blur-lg opacity-40 group-hover:opacity-70 transition duration-1000 group-hover:duration-200" />
+              {/* Outer Neon Glow Ring (Rectangular) - Black in light mode, White in dark mode */}
+              <div className="absolute -inset-1 bg-black dark:bg-white rounded-2xl blur-xl opacity-20 dark:opacity-10 group-hover:opacity-40 dark:group-hover:opacity-30 transition duration-1000 group-hover:duration-200" />
               
-              {/* Main Image Wrapper */}
-              <div className="relative w-80 h-[360px] rounded-xl overflow-hidden bg-zinc-950 border-2 border-blue-500 dark:border-cyber-accent shadow-neon-green flex items-center justify-center">
+              {/* Main Image Wrapper with Flip Animation */}
+              <motion.div 
+                whileHover={{ rotateY: 15, rotateX: 5 }}
+                transition={{ type: "spring", stiffness: 300, damping: 20 }}
+                className="relative w-80 h-[360px] rounded-xl overflow-hidden bg-zinc-950 border border-gray-300 dark:border-zinc-800 shadow-xl flex items-center justify-center perspective-1000"
+              >
                 <img
                   src={profile}
                   alt="Sahana V Profile"
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                  className="w-full h-full object-cover"
                 />
-              </div>
+              </motion.div>
 
               {/* Float Decorative Badge (Available for Opportunities) */}
               <div className="absolute -bottom-4 left-1/2 transform -translate-x-1/2 px-4 py-2 rounded-full border border-gray-200 dark:border-zinc-800 bg-white/90 dark:bg-zinc-950/90 backdrop-blur-md flex items-center gap-2 shadow-lg transition-transform group-hover:scale-105 duration-300">

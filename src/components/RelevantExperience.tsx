@@ -11,15 +11,6 @@ interface ExperienceItem {
 export const RelevantExperience: React.FC = () => {
   const experiences: ExperienceItem[] = [
     {
-      role: "Frontend Developer - ERP/CRM",
-      company: "Bharath University",
-      period: "2023 - 2024",
-      points: [
-        "Developed and maintained responsive user interfaces for ERP/CRM platform serving 10,000+ students & staff using React + Vite.",
-        "Built reusable UI components, improving development efficiency and consistency across modules."
-      ]
-    },
-    {
       role: "Intern - MoarDigital360 Pvt Ltd",
       company: "Web Development & Digital Marketing",
       period: "2023",
