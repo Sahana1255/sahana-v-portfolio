@@ -1,5 +1,6 @@
 import React from 'react';
 import { Star, Calendar, ExternalLink } from 'lucide-react';
+import { motion } from 'framer-motion';
 
 export const FeaturedProject: React.FC = () => {
   const projects = [
@@ -58,25 +59,34 @@ export const FeaturedProject: React.FC = () => {
         {/* Timeline Layout */}
         <div className="relative border-l border-gray-200 dark:border-zinc-800 ml-4 pl-6 space-y-8">
           {projects.map((proj, idx) => (
-            <div key={idx} className="relative group">
+            <motion.div 
+              key={idx} 
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-50px" }}
+              transition={{ duration: 0.5, delay: idx * 0.15 }}
+              className="relative group"
+            >
               {/* Timeline Dot */}
-              <div className="absolute -left-[31px] top-1.5 w-4 h-4 rounded-full border-2 border-white dark:border-zinc-950 bg-emerald-500 dark:bg-cyber-accent shadow-md group-hover:scale-125 transition-transform duration-300">
+              <motion.div 
+                animate={{ boxShadow: ["0px 0px 0px 0px rgba(16,185,129,0)", "0px 0px 10px 2px rgba(16,185,129,0.4)", "0px 0px 0px 0px rgba(16,185,129,0)"] }}
+                transition={{ repeat: Infinity, duration: 2, delay: idx * 0.5 }}
+                className="absolute -left-[31px] top-1.5 w-4 h-4 rounded-full border-2 border-white dark:border-zinc-950 bg-emerald-500 dark:bg-cyber-accent shadow-md group-hover:scale-125 transition-transform duration-300"
+              >
                 <div className="absolute inset-1 rounded-full bg-white dark:bg-zinc-950 scale-0 group-hover:scale-100 transition-transform duration-300" />
-              </div>
+              </motion.div>
 
-              {/* Date Badge */}
-              <div className="flex items-center gap-2 mb-2">
-                <span className="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-xs font-mono font-bold bg-emerald-50 dark:bg-emerald-950/30 text-emerald-600 dark:text-emerald-400 border border-emerald-100 dark:border-emerald-900/30">
-                  <Calendar className="h-3 w-3" />
-                  {proj.period}
-                </span>
-              </div>
-
-              {/* Card Content */}
-              <div className="space-y-1">
-                <h3 className="text-base font-bold text-gray-900 dark:text-white group-hover:text-emerald-600 dark:group-hover:text-cyber-accent transition-colors duration-300">
+              {/* Header Row: Title + Date Badge in the Right Corner */}
+              <div className="flex flex-col sm:flex-row sm:items-start justify-between gap-2 text-left">
+                <h3 className="text-base font-bold text-gray-900 dark:text-white group-hover:text-emerald-600 dark:group-hover:text-cyber-accent transition-colors duration-300 leading-tight">
                   {proj.title}
                 </h3>
+                <div className="flex-shrink-0 self-start sm:text-right">
+                  <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded text-[10px] font-mono font-bold bg-emerald-50 dark:bg-emerald-950/30 text-emerald-600 dark:text-emerald-400 border border-emerald-100 dark:border-emerald-900/30">
+                    <Calendar className="h-2.5 w-2.5" />
+                    {proj.period}
+                  </span>
+                </div>
               </div>
 
               {/* Bullet Points */}
@@ -87,7 +97,7 @@ export const FeaturedProject: React.FC = () => {
                   </li>
                 ))}
               </ul>
-            </div>
+            </motion.div>
           ))}
         </div>
 
