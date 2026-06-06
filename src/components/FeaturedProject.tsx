@@ -7,6 +7,7 @@ export const FeaturedProject: React.FC = () => {
     {
       title: "AI-Powered Smart Campus Information Kiosk",
       period: "2026",
+      link: { label: "Campus Kiosk", url: "https://kiosk.balajibalamurugan.com/" },
       points: [
         "Developed a multilingual AI-powered campus information kiosk using RAG and Gemma 2 to provide instant access to institutional information.",
         "Implemented semantic search using Qdrant Vector Database for efficient retrieval of information from PDFs, documents, and knowledge repositories.",
@@ -17,6 +18,7 @@ export const FeaturedProject: React.FC = () => {
     {
       title: "URL Threat Evaluation and Risk Scoring System",
       period: "2025",
+      link: { label: "URL Checker", url: "https://github.com/Sahana1255/url-checker" },
       points: [
         "Developed a URL Security Checker Tool using Python, Flask, and CLI tools (OpenSSL, WHOIS, PowerShell) to perform SSL validation, phishing detection, ASCII/Unicode checks, and port scanning with Python-nmap.",
         "Collaborated with a teammate on a lightweight ML module for phishing risk scoring and site classification (Safe, Suspicious, Dangerous)."
@@ -25,17 +27,12 @@ export const FeaturedProject: React.FC = () => {
     {
       title: "Frontend Developer - ERP/CRM",
       period: "2024 - 2025",
+      link: { label: "Srishty About Us", url: "https://srishty.bharathuniv.ac.in/about-us" },
       points: [
         "Developed and maintained responsive user interfaces for ERP/CRM platform serving 10,000+ students & staff using React + Vite.",
         "Built reusable UI components, improving development efficiency and consistency across modules."
       ]
     }
-  ];
-
-  const projectLinks = [
-    { title: "URL Checker", url: "https://github.com/Sahana1255/url-checker" },
-    { title: "Srishty About Us", url: "https://srishty.bharathuniv.ac.in/about-us" },
-    { title: "Campus Kiosk", url: "https://kiosk.balajibalamurugan.com/" }
   ];
 
   return (
@@ -59,8 +56,8 @@ export const FeaturedProject: React.FC = () => {
         {/* Timeline Layout */}
         <div className="relative border-l border-gray-200 dark:border-zinc-800 ml-4 pl-6 space-y-8">
           {projects.map((proj, idx) => (
-            <motion.div 
-              key={idx} 
+            <motion.div
+              key={idx}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-50px" }}
@@ -68,7 +65,7 @@ export const FeaturedProject: React.FC = () => {
               className="relative group"
             >
               {/* Timeline Dot */}
-              <motion.div 
+              <motion.div
                 animate={{ boxShadow: ["0px 0px 0px 0px rgba(16,185,129,0)", "0px 0px 10px 2px rgba(16,185,129,0.4)", "0px 0px 0px 0px rgba(16,185,129,0)"] }}
                 transition={{ repeat: Infinity, duration: 2, delay: idx * 0.5 }}
                 className="absolute -left-[31px] top-1.5 w-4 h-4 rounded-full border-2 border-white dark:border-zinc-950 bg-emerald-500 dark:bg-cyber-accent shadow-md group-hover:scale-125 transition-transform duration-300"
@@ -76,11 +73,24 @@ export const FeaturedProject: React.FC = () => {
                 <div className="absolute inset-1 rounded-full bg-white dark:bg-zinc-950 scale-0 group-hover:scale-100 transition-transform duration-300" />
               </motion.div>
 
-              {/* Header Row: Title + Date Badge in the Right Corner */}
+              {/* Header Row: Title + Date Badge + Link */}
               <div className="flex flex-col sm:flex-row sm:items-start justify-between gap-2 text-left">
-                <h3 className="text-base font-bold text-gray-900 dark:text-white group-hover:text-emerald-600 dark:group-hover:text-cyber-accent transition-colors duration-300 leading-tight">
-                  {proj.title}
-                </h3>
+                <div className="flex items-start gap-2 flex-wrap min-w-0">
+                  <h3 className="text-base font-bold text-gray-900 dark:text-white group-hover:text-emerald-600 dark:group-hover:text-cyber-accent transition-colors duration-300 leading-tight">
+                    {proj.title}
+                  </h3>
+                  {proj.link && (
+                    <a
+                      href={proj.link.url}
+                      target="_blank"
+                      rel="noreferrer"
+                      onClick={e => e.stopPropagation()}
+                      className="inline-flex items-center gap-1 px-2 py-0.5 rounded-md border border-emerald-200 dark:border-emerald-900/40 bg-emerald-50 dark:bg-emerald-950/20 text-emerald-600 dark:text-emerald-400 font-mono text-[10px] hover:bg-emerald-100 dark:hover:bg-emerald-950/40 transition-all duration-200 flex-shrink-0 self-start mt-0.5"
+                    >
+                      {proj.link.label} <ExternalLink className="h-2.5 w-2.5" />
+                    </a>
+                  )}
+                </div>
                 <div className="flex-shrink-0 self-start sm:text-right">
                   <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded text-[10px] font-mono font-bold bg-emerald-50 dark:bg-emerald-950/30 text-emerald-600 dark:text-emerald-400 border border-emerald-100 dark:border-emerald-900/30">
                     <Calendar className="h-2.5 w-2.5" />
@@ -101,25 +111,6 @@ export const FeaturedProject: React.FC = () => {
           ))}
         </div>
 
-        {/* Project Links */}
-        <div className="pt-6 border-t border-gray-200 dark:border-zinc-800/50">
-          <div className="text-xs font-mono font-bold text-gray-500 dark:text-zinc-500 uppercase tracking-widest mb-3">
-            Project Links
-          </div>
-          <div className="flex flex-wrap gap-3">
-            {projectLinks.map((link, idx) => (
-              <a
-                key={idx}
-                href={link.url}
-                target="_blank"
-                rel="noreferrer"
-                className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg border border-gray-200 dark:border-zinc-800 bg-white dark:bg-zinc-950/40 text-gray-700 dark:text-zinc-300 font-mono text-xs hover:border-emerald-500 dark:hover:border-cyber-accent hover:text-emerald-600 dark:hover:text-cyber-accent transition-all duration-300 shadow-sm"
-              >
-                {link.title} <ExternalLink className="h-3 w-3" />
-              </a>
-            ))}
-          </div>
-        </div>
 
       </div>
     </div>

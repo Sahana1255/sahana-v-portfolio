@@ -10,7 +10,7 @@ export const Footer: React.FC = () => {
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
         <div className="grid grid-cols-1 md:grid-cols-12 gap-8 items-start">
-          
+
           {/* Brand Info */}
           <div className="md:col-span-4 text-left space-y-4">
             <div className="flex items-center gap-2">

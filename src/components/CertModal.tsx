@@ -38,16 +38,16 @@ export const CertModal: React.FC<CertModalProps> = ({ cert, onClose }) => {
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
           transition={{ duration: 0.2 }}
-          className="fixed inset-0 z-50 flex items-center justify-center bg-black/85 backdrop-blur-sm p-3 sm:p-6"
+          className="fixed inset-0 z-50 flex items-stretch justify-stretch bg-black/90 backdrop-blur-sm"
           onClick={onClose}
         >
           <motion.div
             key="cert-modal-box"
-            initial={{ opacity: 0, scale: 0.93, y: 24 }}
-            animate={{ opacity: 1, scale: 1, y: 0 }}
-            exit={{ opacity: 0, scale: 0.93, y: 24 }}
-            transition={{ duration: 0.25, ease: [0.16, 1, 0.3, 1] }}
-            className="w-full max-w-5xl h-[88vh] bg-white dark:bg-[#0a0a0f] rounded-2xl border border-gray-200 dark:border-zinc-800 overflow-hidden flex flex-col shadow-2xl"
+            initial={{ opacity: 0, scale: 0.97 }}
+            animate={{ opacity: 1, scale: 1 }}
+            exit={{ opacity: 0, scale: 0.97 }}
+            transition={{ duration: 0.22, ease: [0.16, 1, 0.3, 1] }}
+            className="w-full max-w-full max-h-full bg-white dark:bg-[#0a0a0f] border border-gray-200 dark:border-zinc-800 rounded-2xl overflow-hidden flex flex-col shadow-2xl"
             onClick={e => e.stopPropagation()}
           >
             {/* Header */}
@@ -68,60 +68,54 @@ export const CertModal: React.FC<CertModalProps> = ({ cert, onClose }) => {
               </button>
             </div>
 
-            {/* Body */}
-            <div className="flex flex-1 overflow-hidden">
-              {/* PDF Viewer – Left 55% */}
-              <div className="w-[55%] border-r border-gray-200 dark:border-zinc-800 bg-gray-100 dark:bg-zinc-950 flex-shrink-0">
-                <iframe
-                  src={cert.pdfUrl}
-                  className="w-full h-full"
+            {/* Body – Single Column Layout */}
+            <div className="flex flex-row h-full overflow-hidden">
+              {/* Certificate Image – Full Width */}
+              <iframe
+                  src={`${cert.pdfUrl}#toolbar=0&navpanes=0&scrollbar=0`}
+                  className="h-full"
+                  style={{ width: '70%', border: 'none' }}
                   title={cert.title}
-                  style={{ border: 'none' }}
                 />
-              </div>
 
-              {/* Content – Right 45% */}
-              <div className="flex-1 overflow-y-auto">
-                <div className="p-5 space-y-5">
-                  {/* Cert Meta */}
-                  <div>
-                    <div className="text-[9px] font-mono font-bold text-gray-400 dark:text-zinc-500 uppercase tracking-widest mb-1.5">
-                      Issued By
-                    </div>
-                    <p className="text-base font-bold text-blue-500 dark:text-blue-400">{cert.issuer}</p>
-                    <div className="flex items-center gap-1.5 mt-1.5 text-xs text-gray-500 dark:text-zinc-400 font-mono">
-                      <Calendar className="h-3 w-3" />
-                      {cert.issued}
-                    </div>
+              {/* Content – Below Image */}
+              <div className="p-5 space-y-5 overflow-y-auto" style={{ width: '30%' }}>
+                {/* Cert Meta */}
+                <div>
+                  <div className="text-[9px] font-mono font-bold text-gray-400 dark:text-zinc-500 uppercase tracking-widest mb-1.5">
+                    Issued By
                   </div>
-
-                  <div className="border-t border-gray-100 dark:border-zinc-800" />
-
-                  {/* What I Learned */}
-                  <div>
-                    <div className="flex items-center gap-2 mb-3.5">
-                      <div className="w-6 h-6 rounded-md bg-emerald-100 dark:bg-emerald-950/40 flex items-center justify-center flex-shrink-0">
-                        <BookOpen className="h-3.5 w-3.5 text-emerald-600 dark:text-emerald-400" />
-                      </div>
-                      <h3 className="text-xs font-bold text-gray-900 dark:text-white uppercase tracking-widest">
-                        What I Learned
-                      </h3>
-                    </div>
-                    <ul className="space-y-3">
-                      {cert.learnedPoints.map((pt, idx) => (
-                        <motion.li
-                          key={idx}
-                          initial={{ opacity: 0, x: -8 }}
-                          animate={{ opacity: 1, x: 0 }}
-                          transition={{ delay: idx * 0.06 }}
-                          className="flex items-start gap-2.5 text-sm text-gray-600 dark:text-zinc-300 leading-relaxed"
-                        >
-                          <span className="mt-2 w-1.5 h-1.5 rounded-full bg-emerald-500 flex-shrink-0" />
-                          {pt}
-                        </motion.li>
-                      ))}
-                    </ul>
+                  <p className="text-base font-bold text-blue-500 dark:text-blue-400">{cert.issuer}</p>
+                  <div className="flex items-center gap-1.5 mt-1.5 text-xs text-gray-500 dark:text-zinc-400 font-mono">
+                    <Calendar className="h-3 w-3" />
+                    {cert.issued}
                   </div>
+                </div>
+
+                <div className="border-t border-gray-100 dark:border-zinc-800" />
+
+                {/* What I Learned */}
+                <div>
+                  <div className="flex items-center gap-2 mb-3.5">
+                    <div className="w-6 h-6 rounded-md bg-emerald-100 dark:bg-emerald-950/40 flex items-center justify-center flex-shrink-0">
+                      <BookOpen className="h-3.5 w-3.5 text-emerald-600 dark:text-emerald-400" />
+                    </div>
+                    <h3 className="text-xs font-bold text-gray-900 dark:text-white uppercase tracking-widest">What I Learned</h3>
+                  </div>
+                  <ul className="space-y-3">
+                    {cert.learnedPoints.map((pt, idx) => (
+                      <motion.li
+                        key={idx}
+                        initial={{ opacity: 0, x: -8 }}
+                        animate={{ opacity: 1, x: 0 }}
+                        transition={{ delay: idx * 0.06 }}
+                        className="flex items-start gap-2.5 text-sm text-gray-600 dark:text-zinc-300 leading-relaxed"
+                      >
+                        <span className="mt-2 w-1.5 h-1.5 rounded-full bg-emerald-500 flex-shrink-0" />
+                        {pt}
+                      </motion.li>
+                    ))}
+                  </ul>
                 </div>
               </div>
             </div>

@@ -102,47 +102,17 @@ export const HeroSection: React.FC = () => {
                 <span className="text-xs font-mono font-bold ml-2">Click Here!</span>
               </motion.div>
               <a
-                href="https://linkedin.com/in/sahana-v1255/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center gap-2 px-5 py-3 rounded-lg border border-gray-300 dark:border-zinc-800 bg-white dark:bg-zinc-900/50 hover:bg-gray-50 dark:hover:bg-zinc-900 text-gray-700 dark:text-zinc-300 font-semibold text-sm transition-all duration-300"
-              >
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="h-4 w-4 text-blue-500 fill-current">
-                  <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
-                  <rect x="2" y="9" width="4" height="12" />
-                  <circle cx="4" cy="4" r="2" />
-                </svg>
-                LinkedIn
-              </a>
-              <a
                 href="https://tryhackme.com/p/sahana_v"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-2 px-5 py-3 rounded-lg border border-gray-300 dark:border-zinc-800 bg-white dark:bg-zinc-900/50 hover:bg-gray-50 dark:hover:bg-zinc-900 text-gray-700 dark:text-zinc-300 font-semibold text-sm transition-all duration-300"
+                className="flex items-center gap-2 px-5 py-3 rounded-lg border border-gray-300 dark:border-zinc-800 bg-white dark:bg-zinc-900/50 hover:bg-gray-50 dark:hover:bg-zinc-900 px-5 py-3 rounded-lg border border-gray-300 dark:border-zinc-800 bg-white dark:bg-zinc-900/50 hover:bg-gray-50 dark:hover:bg-zinc-900 text-gray-700 dark:text-zinc-300 font-semibold text-sm transition-all duration-300"
               >
                 <Shield className="h-4 w-4 text-red-500" />
                 TryHackMe
               </a>
             </motion.div>
 
-            {/* Quick Contact Info Row */}
-            <motion.div
-              variants={itemVariants}
-              className="flex flex-wrap gap-y-3 gap-x-6 pt-6 text-sm font-medium text-gray-500 dark:text-zinc-500 border-t border-gray-200 dark:border-zinc-900"
-            >
-              <div className="flex items-center gap-2">
-                <MapPin className="h-4 w-4 text-blue-500 dark:text-cyber-accent" />
-                Tamil Nadu, Chennai
-              </div>
-              <div className="flex items-center gap-2">
-                <Phone className="h-4 w-4 text-blue-500 dark:text-cyber-accent" />
-                +91 7200317690
-              </div>
-              <div className="flex items-center gap-2">
-                <Mail className="h-4 w-4 text-blue-500 dark:text-cyber-accent" />
-                sahanav1255@gmail.com
-              </div>
-            </motion.div>
+
           </div>
 
           {/* Profile Picture Card - Rectangular Box */}

@@ -4,16 +4,16 @@ import { Calendar, GraduationCap } from 'lucide-react';
 export const Education: React.FC = () => {
   const educationData = [
     {
-      degree: "Master of Technology - Computer Science",
-      institution: "Bharath Institute of Higher Education and Research",
-      period: "Currently Pursuing",
-      details: "Currently Pursuing"
-    },
-    {
       degree: "Bachelor of Technology - Computer Science",
       institution: "Bharath Institute of Higher Education and Research",
       period: "2022 - 2026",
       details: "CGPA: 9.1/10 • Percentage: 91.1%"
+    },
+    {
+      degree: "Higher Secondary School Certificate",
+      institution: "Zion Matriculation Higher Secondary School, Selaiyur",
+      period: "2022",
+      details: "State Board of School Examination"
     }
   ];
 
