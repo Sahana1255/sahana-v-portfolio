@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Download, Terminal, Shield, Mail, Phone, MapPin, CornerRightDown } from 'lucide-react';
+import { Download, Terminal, Shield, CornerRightDown } from 'lucide-react';
 import profile from '../assets/profile.jpg';
 
 export const HeroSection: React.FC = () => {
@@ -102,14 +102,14 @@ export const HeroSection: React.FC = () => {
                 <span className="text-xs font-mono font-bold ml-2">Click Here!</span>
               </motion.div>
               <a
-                href="https://tryhackme.com/p/sahana_v"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center gap-2 px-5 py-3 rounded-lg border border-gray-300 dark:border-zinc-800 bg-white dark:bg-zinc-900/50 hover:bg-gray-50 dark:hover:bg-zinc-900 px-5 py-3 rounded-lg border border-gray-300 dark:border-zinc-800 bg-white dark:bg-zinc-900/50 hover:bg-gray-50 dark:hover:bg-zinc-900 text-gray-700 dark:text-zinc-300 font-semibold text-sm transition-all duration-300"
-              >
-                <Shield className="h-4 w-4 text-red-500" />
-                TryHackMe
-              </a>
+  href="https://tryhackme.com/p/sahana_v"
+  target="_blank"
+  rel="noopener noreferrer"
+  className="flex items-center gap-2 px-5 py-3 rounded-lg border border-gray-300 dark:border-zinc-800 bg-white dark:bg-zinc-900/50 hover:bg-gray-50 dark:hover:bg-zinc-900 text-gray-700 dark:text-zinc-300 font-semibold text-sm transition-all duration-300"
+>
+  <Shield className="h-4 w-4 text-red-500" />
+  TryHackMe
+</a>
             </motion.div>
 
 
