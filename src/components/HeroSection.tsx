@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Download, Terminal, Shield, CornerRightDown } from 'lucide-react';
-import profile from '../assets/profile.jpg';
+import profile from '../assets/profile.png';
 
 export const HeroSection: React.FC = () => {
   // Animation variants for staggered load

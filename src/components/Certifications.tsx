@@ -5,18 +5,18 @@ import { CertModal } from './CertModal';
 import type { CertModalData } from './CertModal';
 
 // PDF asset imports (Vite resolves these to hashed URLs in production)
-import thmSoc1Url from '../assets/THM-SOC_L1.pdf?url';
-import thmCs101Url from '../assets/THM-CS-101.pdf?url';
-import thmPreSecUrl from '../assets/THM-Pre_security.pdf?url';
-import thmAocUrl from '../assets/THM-AOC.pdf?url';
-import nptelUrl from '../assets/NPTEL - Ethical Hacking.pdf?url';
-import codtechUrl from '../assets/CODTECH Cyber Security and Ethical Hacking.pdf?url';
-import azureUrl from '../assets/Coursera-MS Azure for data engineering.pdf?url';
-import pythonDsUrl from '../assets/Coursera-Python for Data Science, AI & Development.pdf?url';
-import dataVizPyUrl from '../assets/Sem4- Data Visualization with Pyhton.pdf?url';
-import dataVizRUrl from '../assets/Sem4- Data Visualization with R.pdf?url';
-import introCloudUrl from '../assets/Sem2- Intoduction to Cloud.pdf?url';
-import dataAnalysisUrl from '../assets/Sem1- Data analysis with python.pdf?url';
+import thmSoc1Certificate from '../assets/THM-SOC_L1-1.png';
+import thmCs101Certificate from '../assets/THM-CS-101-1.png';
+import thmPreSecCertificate from '../assets/THM-Pre_security-1.png';
+import thmAocCertificate from '../assets/THM-AOC-1.png';
+import nptelCertificate from '../assets/NPTEL - Ethical Hacking-1.png';
+import codtechCertificate from "../assets/CODTECH Cyber Security and Ethical Hacking-1.png";
+import azureCertificate from "../assets/Coursera-MS Azure for data engineering-1.png";
+import pythonDataScienceCertificate from "../assets/Coursera-Python for Data Science, AI  Development-1.png";
+import dataVizPyCertificate from '../assets/Sem4- Data Visualization with Pyhton-1.png';
+import dataVizRCertificate from '../assets/Sem4- Data Visualization with R-1.png';
+import introCloudCertificate from '../assets/Sem2- Intoduction to Cloud-1.png';
+import dataAnalysisCertificate from '../assets/Sem1- Data analysis with python-1.png';
 
 interface Certification {
   title: string;
@@ -42,7 +42,7 @@ export const Certifications: React.FC = () => {
       issued: "February 2026",
       credentialId: "THM-B4OMPX1OKH",
       verified: true,
-      pdfUrl: thmSoc1Url,
+      pdfUrl: thmSoc1Certificate,
       learnedPoints: [
         "Understood the SOC analyst role and daily responsibilities in a real-world security operations environment.",
         "Analyzed and correlated security events using SIEM tools to identify threats and anomalies.",
@@ -59,7 +59,7 @@ export const Certifications: React.FC = () => {
       issued: "December 2025",
       credentialId: "THM-FCPNU96DQC",
       verified: true,
-      pdfUrl: thmCs101Url,
+      pdfUrl: thmCs101Certificate,
       learnedPoints: [
         "Learned fundamental cybersecurity concepts including the CIA triad, attack surfaces, and common threat vectors.",
         "Explored web application security basics such as OWASP Top 10 vulnerabilities.",
@@ -76,7 +76,7 @@ export const Certifications: React.FC = () => {
       issued: "December 2025",
       credentialId: "THM-YSJBNP6OBK",
       verified: true,
-      pdfUrl: thmPreSecUrl,
+      pdfUrl: thmPreSecCertificate,
       learnedPoints: [
         "Covered networking fundamentals including TCP/IP, DNS, HTTP, and how the internet works.",
         "Learned Linux command-line basics essential for security work and system administration.",
@@ -93,7 +93,7 @@ export const Certifications: React.FC = () => {
       issued: "October 2025",
       credentialId: "NPTEL-ETH-HACK",
       badge: "Elite",
-      pdfUrl: nptelUrl,
+      pdfUrl: nptelCertificate,
       learnedPoints: [
         "Learned the full ethical hacking methodology from reconnaissance and scanning to exploitation and reporting.",
         "Studied vulnerability assessment and structured penetration testing techniques.",
@@ -110,7 +110,7 @@ export const Certifications: React.FC = () => {
       issued: "January 2026",
       credentialId: "CODTECH-CS-EH",
       verified: true,
-      pdfUrl: codtechUrl,
+      pdfUrl: codtechCertificate,
       learnedPoints: [
         "Completed intensive hands-on training covering both offensive and defensive security techniques.",
         "Practiced web application vulnerability scanning, SQL injection, and XSS exploitation.",
@@ -127,7 +127,7 @@ export const Certifications: React.FC = () => {
       issued: "December 2025",
       credentialId: "THM-5KADCRR2GM",
       verified: true,
-      pdfUrl: thmAocUrl,
+      pdfUrl: thmAocCertificate,
       learnedPoints: [
         "Completed a 24-day security challenge spanning a wide range of offensive and defensive topics.",
         "Explored AI in security, OPSEC, malware analysis, and log analysis in depth.",
@@ -144,7 +144,7 @@ export const Certifications: React.FC = () => {
       issued: "November 2024",
       credentialId: "HJN4SLO45BBJ",
       verified: true,
-      pdfUrl: azureUrl,
+      pdfUrl: azureCertificate,
       learnedPoints: [
         "Learned Azure cloud fundamentals and understood how data engineering fits into the Azure ecosystem.",
         "Built ETL/ELT pipelines using Azure Data Factory for data ingestion and transformation.",
@@ -160,7 +160,7 @@ export const Certifications: React.FC = () => {
       category: "Data Science",
       issued: "July 2024",
       credentialId: "Q63U4K72QCDN",
-      pdfUrl: pythonDsUrl,
+      pdfUrl: pythonDataScienceCertificate,
       learnedPoints: [
         "Mastered Python fundamentals: data types, control structures, functions, and object-oriented programming.",
         "Used NumPy and Pandas for efficient data manipulation and analysis of real-world datasets.",
@@ -176,7 +176,7 @@ export const Certifications: React.FC = () => {
       category: "Data Science",
       issued: "October 2024",
       credentialId: "course-v1:CognitiveClass DV0101EN v2",
-      pdfUrl: dataVizPyUrl,
+      pdfUrl: dataVizPyCertificate,
       learnedPoints: [
         "Created compelling visualizations using Matplotlib, Seaborn, and Plotly libraries.",
         "Learned best practices for selecting appropriate chart types for different data types.",
@@ -192,7 +192,7 @@ export const Certifications: React.FC = () => {
       category: "Data Science",
       issued: "October 2024",
       credentialId: "course-v1:CognitiveClass DV0151EN v1",
-      pdfUrl: dataVizRUrl,
+      pdfUrl: dataVizRCertificate,
       learnedPoints: [
         "Used ggplot2 to create publication-quality and layered data visualizations in R.",
         "Learned R fundamentals: vectors, data frames, functions, and control structures.",
@@ -208,7 +208,7 @@ export const Certifications: React.FC = () => {
       category: "Cloud Computing",
       issued: "March 2024",
       credentialId: "course-v1:IBMDeveloperSkillsNetwork CC0101EN v1",
-      pdfUrl: introCloudUrl,
+      pdfUrl: introCloudCertificate,
       learnedPoints: [
         "Understood core cloud computing concepts: IaaS, PaaS, SaaS, and deployment models.",
         "Explored major cloud providers and how they differentiate their service offerings.",
@@ -224,7 +224,7 @@ export const Certifications: React.FC = () => {
       category: "Data Science",
       issued: "April 2023",
       credentialId: "course-v1:CognitiveClass DA0101EN v1",
-      pdfUrl: dataAnalysisUrl,
+      pdfUrl: dataAnalysisCertificate,
       learnedPoints: [
         "Imported, cleaned, and transformed raw datasets using Pandas for analysis readiness.",
         "Performed descriptive statistics, correlation analysis, and hypothesis testing.",

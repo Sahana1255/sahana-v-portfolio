@@ -69,17 +69,21 @@ export const CertModal: React.FC<CertModalProps> = ({ cert, onClose }) => {
             </div>
 
             {/* Body – Single Column Layout */}
-            <div className="flex flex-row h-full overflow-hidden">
+            <div className="flex flex-row h-[calc(100vh-70px)] overflow-hidden">
               {/* Certificate Image – Full Width */}
-              <iframe
-                  src={`${cert.pdfUrl}#toolbar=0&navpanes=0&scrollbar=0`}
-                  className="h-full"
-                  style={{ width: '70%', border: 'none' }}
-                  title={cert.title}
-                />
+              <div
+  className="flex items-center justify-center bg-zinc-100 dark:bg-zinc-900 overflow-hidden"
+  style={{ width: '70%' }}
+>
+  <img
+    src={cert.pdfUrl}
+    alt={cert.title}
+    className="max-w-full max-h-full object-contain"
+  />
+</div>
 
               {/* Content – Below Image */}
-              <div className="p-5 space-y-5 overflow-y-auto" style={{ width: '30%' }}>
+              <div className="p-5 space-y-5 overflow-hidden" style={{ width: '30%' }}>
                 {/* Cert Meta */}
                 <div>
                   <div className="text-[9px] font-mono font-bold text-gray-400 dark:text-zinc-500 uppercase tracking-widest mb-1.5">
