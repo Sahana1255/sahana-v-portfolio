@@ -8,7 +8,7 @@ export const Footer: React.FC = () => {
       <div className="absolute bottom-0 right-0 w-80 h-80 bg-cyber-accent/5 rounded-full blur-[100px] pointer-events-none" />
       <div className="absolute top-0 left-10 w-60 h-60 bg-blue-500/5 rounded-full blur-[80px] pointer-events-none" />
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+      <div className="w-full mx-auto px-4 sm:px-6 lg:px-8 relative">
         <div className="grid grid-cols-1 md:grid-cols-12 gap-8 items-start">
 
           {/* Brand Info */}
@@ -28,7 +28,7 @@ export const Footer: React.FC = () => {
           </div>
 
           {/* Contact Details List */}
-          <div className="md:col-span-4 text-left space-y-3">
+          <div className="md:col-span-3 text-left space-y-3">
             <h4 className="text-xs font-mono font-extrabold text-gray-400 dark:text-zinc-500 uppercase tracking-widest pb-1 border-b border-gray-200 dark:border-zinc-900/60 max-w-[100px]">
               Contact
             </h4>
@@ -60,8 +60,35 @@ export const Footer: React.FC = () => {
             </ul>
           </div>
 
+          {/* Languages */}
+          <div className="md:col-span-2 text-left space-y-3">
+            <h4 className="text-xs font-mono font-extrabold text-gray-400 dark:text-zinc-500 uppercase tracking-widest pb-1 border-b border-gray-200 dark:border-zinc-900/60 max-w-[100px]">
+              Languages
+            </h4>
+            <div className="space-y-3">
+              <div>
+                <div className="flex items-center justify-between mb-1.5">
+                  <span className="text-xs font-bold text-gray-700 dark:text-zinc-300">Tamil</span>
+                  <span className="text-[10px] font-mono text-emerald-600 dark:text-emerald-400">Native Proficiency</span>
+                </div>
+                <div className="w-full h-2.5 rounded-full bg-gray-200 dark:bg-zinc-800 overflow-hidden">
+                  <div className="h-full rounded-full bg-gradient-to-r from-emerald-500 to-emerald-400 dark:from-emerald-500 dark:to-cyber-accent shadow-[0_0_8px_rgba(16,185,129,0.5)]" style={{ width: '100%' }} />
+                </div>
+              </div>
+              <div>
+                <div className="flex items-center justify-between mb-1.5">
+                  <span className="text-xs font-bold text-gray-700 dark:text-zinc-300">English</span>
+                  <span className="text-[10px] font-mono text-emerald-600 dark:text-emerald-400">Professional Working</span>
+                </div>
+                <div className="w-full h-2.5 rounded-full bg-gray-200 dark:bg-zinc-800 overflow-hidden">
+                  <div className="h-full rounded-full bg-gradient-to-r from-emerald-500 to-emerald-400 dark:from-emerald-500 dark:to-cyber-accent shadow-[0_0_8px_rgba(16,185,129,0.5)]" style={{ width: '85%' }} />
+                </div>
+              </div>
+            </div>
+          </div>
+
           {/* Socials Connect and Glowing Lock Badge */}
-          <div className="md:col-span-4 flex flex-col items-start md:items-end justify-between gap-6 h-full">
+          <div className="md:col-span-3 flex flex-col items-start md:items-end justify-between gap-6 h-full">
             <div className="space-y-3 w-full md:text-right">
               <h4 className="text-xs font-mono font-extrabold text-gray-400 dark:text-zinc-500 uppercase tracking-widest pb-1 border-b border-gray-200 dark:border-zinc-900/60 max-w-[100px] md:ml-auto">
                 Let's Connect

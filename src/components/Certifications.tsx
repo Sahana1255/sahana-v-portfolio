@@ -8,13 +8,13 @@ import type { CertModalData } from './CertModal';
 import thmSoc1Certificate from '../assets/THM-SOC_L1-1.png';
 import thmCs101Certificate from '../assets/THM-CS-101-1.png';
 import thmPreSecCertificate from '../assets/THM-Pre_security-1.png';
-import thmAocCertificate from '../assets/THM-AOC-1.png';
+import mlPyCertificate from '../assets/Sem6- Machine Learning with Python1780914796.png';
 import nptelCertificate from '../assets/NPTEL - Ethical Hacking-1.png';
 import codtechCertificate from "../assets/CODTECH Cyber Security and Ethical Hacking-1.png";
 import azureCertificate from "../assets/Coursera-MS Azure for data engineering-1.png";
 import pythonDataScienceCertificate from "../assets/Coursera-Python for Data Science, AI  Development-1.png";
 import dataVizPyCertificate from '../assets/Sem4- Data Visualization with Pyhton-1.png';
-import dataVizRCertificate from '../assets/Sem4- Data Visualization with R-1.png';
+import djangoCertificate from '../assets/SkillUp- Python Django1780914795.png';
 import introCloudCertificate from '../assets/Sem2- Intoduction to Cloud-1.png';
 import dataAnalysisCertificate from '../assets/Sem1- Data analysis with python-1.png';
 
@@ -121,20 +121,20 @@ export const Certifications: React.FC = () => {
       ]
     },
     {
-      title: "Advent of Cyber 2025",
-      issuer: "TryHackMe",
-      category: "Cybersecurity",
-      issued: "December 2025",
-      credentialId: "THM-5KADCRR2GM",
+      title: "Machine Learning with Python",
+      issuer: "IBM",
+      category: "Data Science",
+      issued: "2024",
+      credentialId: "ML-PY-178091",
       verified: true,
-      pdfUrl: thmAocCertificate,
+      pdfUrl: mlPyCertificate,
       learnedPoints: [
-        "Completed a 24-day security challenge spanning a wide range of offensive and defensive topics.",
-        "Explored AI in security, OPSEC, malware analysis, and log analysis in depth.",
-        "Practiced web exploitation, basic reverse engineering, and threat hunting techniques.",
-        "Gained exposure to real-world attack scenarios through daily CTF-style challenges.",
-        "Strengthened breadth of cybersecurity knowledge across domains including cloud, forensics, and networking.",
-        "Reinforced consistent learning habits by completing daily hands-on security exercises.",
+        "Mastered fundamental machine learning algorithms and their implementations in Python.",
+        "Built predictive models using regression, classification, and clustering techniques.",
+        "Evaluated model performance using metrics like accuracy, precision, and recall.",
+        "Applied scikit-learn for data preprocessing and model training.",
+        "Explored real-world datasets to discover hidden patterns and insights.",
+        "Understood the theoretical foundations behind machine learning models.",
       ]
     },
     {
@@ -187,19 +187,19 @@ export const Certifications: React.FC = () => {
       ]
     },
     {
-      title: "Data Visualization with R",
-      issuer: "IBM",
-      category: "Data Science",
-      issued: "October 2024",
-      credentialId: "course-v1:CognitiveClass DV0151EN v1",
-      pdfUrl: dataVizRCertificate,
+      title: "Python Django",
+      issuer: "SkillUp",
+      category: "Web Development",
+      issued: "2024",
+      credentialId: "SKILLUP-DJANGO",
+      pdfUrl: djangoCertificate,
       learnedPoints: [
-        "Used ggplot2 to create publication-quality and layered data visualizations in R.",
-        "Learned R fundamentals: vectors, data frames, functions, and control structures.",
-        "Applied the grammar of graphics to build structured, informative visual outputs.",
-        "Explored statistical visualization techniques including boxplots, histograms, and facets.",
-        "Compared R and Python approaches to understand trade-offs in visualization workflows.",
-        "Produced reproducible visual reports using R Markdown.",
+        "Learned the fundamentals of the Django web framework for Python.",
+        "Built dynamic web applications using the Model-View-Template (MVT) architecture.",
+        "Managed database schemas and queries using Django's built-in ORM.",
+        "Implemented user authentication and authorization systems.",
+        "Created backend APIs to serve data to frontend applications.",
+        "Understood web security concepts within the Django framework.",
       ]
     },
     {
@@ -330,10 +330,10 @@ export const Certifications: React.FC = () => {
       <div className="relative flex items-center justify-center h-10 select-none">
         <span className="font-sans font-black text-3xl tracking-wider text-[#4182FF] uppercase relative">
           IBM
-          <span className="absolute left-0 right-0 top-[20%] h-[7%] bg-[#08080c] transition-colors" />
-          <span className="absolute left-0 right-0 top-[38%] h-[7%] bg-[#08080c] transition-colors" />
-          <span className="absolute left-0 right-0 top-[56%] h-[7%] bg-[#08080c] transition-colors" />
-          <span className="absolute left-0 right-0 top-[74%] h-[7%] bg-[#08080c] transition-colors" />
+          <span className="absolute left-0 right-0 top-[20%] h-[7%] bg-white dark:bg-[#08080c] transition-colors" />
+          <span className="absolute left-0 right-0 top-[38%] h-[7%] bg-white dark:bg-[#08080c] transition-colors" />
+          <span className="absolute left-0 right-0 top-[56%] h-[7%] bg-white dark:bg-[#08080c] transition-colors" />
+          <span className="absolute left-0 right-0 top-[74%] h-[7%] bg-white dark:bg-[#08080c] transition-colors" />
         </span>
       </div>
     );
@@ -341,7 +341,7 @@ export const Certifications: React.FC = () => {
 
   return (
     <section id="certifications" className="py-8 border-t border-gray-150 dark:border-zinc-900/50">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="w-full mx-auto px-4 sm:px-6 lg:px-8">
 
         {/* Header */}
         <div className="flex items-center justify-between mb-6">

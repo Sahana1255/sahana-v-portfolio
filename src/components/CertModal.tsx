@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react';
+import ReactDOM from 'react-dom';
 import { X, ShieldCheck, Calendar, BookOpen } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 
@@ -29,7 +30,7 @@ export const CertModal: React.FC<CertModalProps> = ({ cert, onClose }) => {
     };
   }, [onClose, cert]);
 
-  return (
+  return ReactDOM.createPortal(
     <AnimatePresence>
       {cert && (
         <motion.div
@@ -38,7 +39,7 @@ export const CertModal: React.FC<CertModalProps> = ({ cert, onClose }) => {
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
           transition={{ duration: 0.2 }}
-          className="fixed inset-0 z-50 flex items-stretch justify-stretch bg-black/90 backdrop-blur-sm"
+          className="fixed inset-0 z-50 flex bg-black/90 backdrop-blur-sm"
           onClick={onClose}
         >
           <motion.div
@@ -47,7 +48,7 @@ export const CertModal: React.FC<CertModalProps> = ({ cert, onClose }) => {
             animate={{ opacity: 1, scale: 1 }}
             exit={{ opacity: 0, scale: 0.97 }}
             transition={{ duration: 0.22, ease: [0.16, 1, 0.3, 1] }}
-            className="w-full max-w-full max-h-full bg-white dark:bg-[#0a0a0f] border border-gray-200 dark:border-zinc-800 rounded-2xl overflow-hidden flex flex-col shadow-2xl"
+            className="w-screen h-screen bg-white dark:bg-[#0a0a0f] overflow-hidden flex flex-col"
             onClick={e => e.stopPropagation()}
           >
             {/* Header */}
@@ -68,22 +69,22 @@ export const CertModal: React.FC<CertModalProps> = ({ cert, onClose }) => {
               </button>
             </div>
 
-            {/* Body – Single Column Layout */}
+            {/* Body */}
             <div className="flex flex-row h-[calc(100vh-70px)] overflow-hidden">
-              {/* Certificate Image – Full Width */}
+              {/* Certificate Image */}
               <div
-  className="flex items-center justify-center bg-zinc-100 dark:bg-zinc-900 overflow-hidden"
-  style={{ width: '70%' }}
->
-  <img
-    src={cert.pdfUrl}
-    alt={cert.title}
-    className="max-w-full max-h-full object-contain"
-  />
-</div>
+                className="flex items-center justify-center bg-zinc-100 dark:bg-zinc-900 overflow-hidden"
+                style={{ width: '70%' }}
+              >
+                <img
+                  src={cert.pdfUrl}
+                  alt={cert.title}
+                  className="max-w-full max-h-full object-contain"
+                />
+              </div>
 
-              {/* Content – Below Image */}
-              <div className="p-5 space-y-5 overflow-hidden" style={{ width: '30%' }}>
+              {/* Description */}
+              <div className="p-5 space-y-5 overflow-auto" style={{ width: '30%' }}>
                 {/* Cert Meta */}
                 <div>
                   <div className="text-[9px] font-mono font-bold text-gray-400 dark:text-zinc-500 uppercase tracking-widest mb-1.5">
@@ -126,6 +127,8 @@ export const CertModal: React.FC<CertModalProps> = ({ cert, onClose }) => {
           </motion.div>
         </motion.div>
       )}
-    </AnimatePresence>
+    </AnimatePresence>,
+    document.body
   );
 };
+

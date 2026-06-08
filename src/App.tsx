@@ -39,15 +39,14 @@ function App() {
   ];
 
   return (
-    <div className={`min-h-screen font-sans transition-colors duration-300 ${
-      isDark ? 'bg-black text-white dark' : 'bg-white text-zinc-900'
-    }`}>
-      
+    <div className={`min-h-screen font-sans transition-colors duration-300 ${isDark ? 'bg-black text-white dark' : 'bg-white text-zinc-900'
+      }`}>
+
       {/* Sticky Header Navigation */}
       <header className="fixed top-0 left-0 right-0 z-50 border-b border-gray-200/50 dark:border-zinc-900/60 bg-white/80 dark:bg-black/80 backdrop-blur-md transition-colors duration-300">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="w-full mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-16">
-            
+
             {/* Logo */}
             <a href="#home" className="flex items-center gap-2">
               <ShieldCheck className="h-6 w-6 text-blue-600 dark:text-cyber-accent" />
@@ -72,7 +71,7 @@ function App() {
             {/* Theme Toggle & Mobile Menu Trigger */}
             <div className="flex items-center gap-4">
               <ThemeToggle isDark={isDark} toggleTheme={toggleTheme} />
-              
+
               <button
                 onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
                 className="md:hidden p-2 rounded-lg border border-gray-200 dark:border-zinc-800 text-gray-500 dark:text-zinc-400 hover:bg-gray-150 dark:hover:bg-zinc-900/50 transition-colors"
@@ -104,7 +103,7 @@ function App() {
 
       {/* Main Container Grid */}
       <main className="cyber-grid min-h-screen">
-        
+
         {/* Hero Banner Section */}
         <HeroSection />
 
@@ -114,17 +113,7 @@ function App() {
         {/* About Me & Categorised Skills Grid */}
         <AboutAndSkills />
 
-        {/* Featured Projects Stacked Layout */}
-        <section id="experience" className="py-8 border-t border-gray-150 dark:border-zinc-900/50">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
-            
-            {/* Featured Project Widget (Full Width) */}
-            <div id="projects">
-              <FeaturedProject />
-            </div>
 
-          </div>
-        </section>
 
         {/* Grid of Certifications */}
         <Certifications />

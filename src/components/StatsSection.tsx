@@ -49,8 +49,8 @@ export const StatsSection: React.FC = () => {
   ];
 
   return (
-    <section className="py-8 relative">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section className="pt-2 pb-8 relative">
+      <div className="w-full mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 lg:gap-6">
           {stats.map((stat, idx) => (
             <div
@@ -59,7 +59,7 @@ export const StatsSection: React.FC = () => {
             >
               {/* Corner Glow Highlight */}
               <div className={`absolute top-0 right-0 w-24 h-24 bg-gradient-to-br ${stat.colorClass} blur-xl rounded-full opacity-60 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none`} />
-              
+
               {/* Icon Frame */}
               <div className="flex items-center justify-between">
                 <div className="p-2.5 rounded-lg bg-gray-100 dark:bg-zinc-900/80 text-blue-600 dark:text-cyber-accent group-hover:bg-blue-600 group-hover:text-white dark:group-hover:bg-cyber-accent dark:group-hover:text-black transition-all duration-300">
