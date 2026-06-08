@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 import { Download, Terminal, Shield,Mail } from 'lucide-react';
 import profile from '../assets/profile.png';
 import designImage from '../assets/design.png';
+import resumePdf from '../assets/sahana v- soc analyst.pdf';
 
 export const HeroSection: React.FC = () => {
   // Animation variants for staggered load
@@ -79,7 +80,8 @@ Computer Science graduate with knowledge of cybersecurity principles, network se
             {/* Call to Actions */}
             <motion.div variants={itemVariants} className="flex flex-wrap gap-4 pt-2">
               <a
-                href="#contact"
+                href={resumePdf}
+                download="Sahana_V_SOC_Analyst_Resume.pdf"
                 className="flex items-center gap-2 px-5 py-3 rounded-lg bg-blue-600 hover:bg-blue-700 dark:bg-cyber-accent dark:hover:bg-emerald-400 text-white dark:text-black font-semibold text-sm transition-all duration-300 dark:shadow-[0_0_15px_rgba(0,255,102,0.2)] dark:hover:shadow-[0_0_20px_rgba(0,255,102,0.4)]"
               >
                 <Download className="h-4 w-4 group-hover:-translate-y-1 transition-transform" />
