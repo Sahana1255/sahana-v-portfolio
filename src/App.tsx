@@ -4,7 +4,6 @@ import { ThemeToggle } from './components/ThemeToggle';
 import { HeroSection } from './components/HeroSection';
 import { StatsSection } from './components/StatsSection';
 import { AboutAndSkills } from './components/AboutAndSkills';
-import { FeaturedProject } from './components/FeaturedProject';
 
 import { Certifications } from './components/Certifications';
 import { Footer } from './components/Footer';
