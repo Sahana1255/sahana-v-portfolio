@@ -19,7 +19,7 @@ export default {
         }
       },
       fontFamily: {
-        sans: ['Outfit', 'Inter', 'system-ui', 'sans-serif'],
+        sans: ['"Times New Roman"', 'Times', 'serif'],
         mono: ['Fira Code', 'Courier New', 'monospace'],
       },
       boxShadow: {

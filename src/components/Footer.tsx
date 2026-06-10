@@ -34,10 +34,6 @@ export const Footer: React.FC = () => {
             </h4>
             <ul className="space-y-2 text-xs md:text-sm font-medium text-gray-600 dark:text-zinc-400">
               <li className="flex items-center gap-2.5">
-                <Phone className="h-4 w-4 text-blue-500 dark:text-cyber-accent flex-shrink-0" />
-                <a href="tel:+917200317690" className="hover:text-blue-600 dark:hover:text-cyber-accent transition-colors">+91 7200317690</a>
-              </li>
-              <li className="flex items-center gap-2.5">
                 <Mail className="h-4 w-4 text-blue-500 dark:text-cyber-accent flex-shrink-0" />
                 <a href="mailto:sahanav1255@gmail.com" className="hover:text-blue-600 dark:hover:text-cyber-accent transition-colors">sahanav1255@gmail.com</a>
               </li>
@@ -162,7 +158,7 @@ export const Footer: React.FC = () => {
         </div>
 
         {/* Bottom copyright details */}
-        <div className="mt-12 pt-6 border-t border-gray-200 dark:border-zinc-900/60 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs font-mono font-medium text-gray-400 dark:text-zinc-500">
+        <div className="mt-12 pt-6 border-t border-gray-200 dark:border-zinc-900/60 flex flex-col sm:flex-row items-center sm:justify-start gap-4 text-xs font-mono font-medium text-gray-400 dark:text-zinc-500 pr-16">
           <span>&copy; {new Date().getFullYear()} Sahana V. All rights reserved.</span>
           <span className="flex items-center gap-1">
             Designed for Security <ShieldAlert className="h-3.5 w-3.5 text-blue-500 dark:text-cyber-accent" />

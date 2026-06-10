@@ -52,7 +52,10 @@ export const FeaturedProject: React.FC = () => {
 
       <div className="space-y-5">
         {/* Timeline Layout */}
-        <div className="relative border-l border-gray-200 dark:border-zinc-800 ml-4 pl-6 space-y-5">
+        <div className="relative ml-4 pl-6 space-y-5">
+          {/* Glow-gradient timeline line */}
+          <div className="absolute left-0 top-3 bottom-3 w-[2px] bg-gradient-to-b from-red-500 via-red-500/20 to-transparent" />
+
           {projects.map((proj, idx) => (
             <motion.div
               key={idx}
@@ -62,16 +65,16 @@ export const FeaturedProject: React.FC = () => {
               transition={{ duration: 0.5, delay: idx * 0.15 }}
               className="relative group"
             >
-              {/* Timeline Dot */}
-              <motion.div
-                animate={{ boxShadow: ["0px 0px 0px 0px rgba(16,185,129,0)", "0px 0px 10px 2px rgba(16,185,129,0.4)", "0px 0px 0px 0px rgba(16,185,129,0)"] }}
-                transition={{ repeat: Infinity, duration: 2, delay: idx * 0.5 }}
-                className="absolute -left-[31px] top-1.5 w-4 h-4 rounded-full border-2 border-white dark:border-zinc-950 bg-emerald-500 dark:bg-cyber-accent shadow-md group-hover:scale-125 transition-transform duration-300"
-              >
-                <div className="absolute inset-1 rounded-full bg-white dark:bg-zinc-950 scale-0 group-hover:scale-100 transition-transform duration-300" />
-              </motion.div>
+              {/* Enhanced red pulsing Timeline Dot */}
+              <div className="absolute -left-[32px] top-2 z-10">
+                <div className="relative flex items-center justify-center">
+                  <div className="absolute w-4 h-4 rounded-full bg-red-500/40 animate-ping" />
+                  <div className="w-3.5 h-3.5 rounded-full bg-red-600 border border-white dark:border-zinc-950 shadow-[0_0_8px_rgba(239,68,68,0.8)] transition-all duration-300 group-hover:scale-125" />
+                  <div className="absolute w-1.5 h-1.5 rounded-full bg-white transition-all duration-300 group-hover:scale-150" />
+                </div>
+              </div>
 
-              <div className="p-4 rounded-xl border-2 border-gray-300 dark:border-zinc-700 bg-gray-50/50 dark:bg-[#0c0c10] hover:border-red-400 dark:hover:border-red-500/70 transition-colors shadow-sm mt-1 sm:mt-0">
+              <div className="p-4 rounded-xl border-2 border-gray-300 dark:border-zinc-700 bg-gray-50/50 dark:bg-[#0c0c10] hover:border-gray-400 dark:hover:border-zinc-600 transition-colors shadow-sm mt-1 sm:mt-0">
                 {/* Header Row: Title + Date Badge + Link */}
                 <div className="flex flex-col sm:flex-row sm:items-start justify-between gap-3 text-left">
                   <div className="flex items-start gap-2 flex-wrap min-w-0">

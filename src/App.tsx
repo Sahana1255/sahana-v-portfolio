@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { ShieldCheck, Menu, X } from 'lucide-react';
+import { ShieldCheck, Menu, X, ArrowUp } from 'lucide-react';
 import { ThemeToggle } from './components/ThemeToggle';
 import { HeroSection } from './components/HeroSection';
 import { StatsSection } from './components/StatsSection';
@@ -11,6 +11,16 @@ import { Footer } from './components/Footer';
 function App() {
   const [isDark, setIsDark] = useState(true); // Default to Dark mode as requested
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [showScrollTop, setShowScrollTop] = useState(false);
+
+  // Show/hide scroll-to-top button based on scroll position
+  useEffect(() => {
+    const handleScroll = () => {
+      setShowScrollTop(window.scrollY > 300);
+    };
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   // Synchronize dark class on document element
   useEffect(() => {
@@ -121,6 +131,18 @@ function App() {
 
       {/* Brand Footer & Contact Info */}
       <Footer />
+
+      {/* Scroll to Top Button */}
+      <button
+        onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+        className={`fixed bottom-8 right-8 z-50 p-3 rounded-full bg-blue-600 hover:bg-blue-700 dark:bg-cyber-accent dark:hover:bg-emerald-400 text-white dark:text-black shadow-lg dark:shadow-[0_0_15px_rgba(0,255,102,0.3)] transition-all duration-300 cursor-pointer ${
+          showScrollTop ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10 pointer-events-none'
+        }`}
+        aria-label="Scroll to top"
+        id="scroll-to-top-btn"
+      >
+        <ArrowUp className="h-5 w-5" />
+      </button>
 
     </div>
   );

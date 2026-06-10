@@ -98,13 +98,13 @@
   width: 8px;
   height: 8px;
   border-radius: 50%;
-  background-color: #00ff66;
-  box-shadow: 0 0 8px #00ff66;
+  background-color: #dc2626;
+  box-shadow: 0 0 8px #dc2626;
 }
 
 .light .timeline-dot::after {
-  background-color: #0066ff;
-  box-shadow: 0 0 8px #0066ff;
+  background-color: #dc2626;
+  box-shadow: 0 0 8px #dc2626;
 }
 
 /* Animations and Glitches */

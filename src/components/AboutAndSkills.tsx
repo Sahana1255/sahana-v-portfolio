@@ -63,7 +63,7 @@ export const AboutAndSkills: React.FC = () => {
             <FeaturedProject />
             
             {/* Education Card */}
-            <div className="rounded-xl border border-gray-200 dark:border-zinc-800 bg-white dark:bg-zinc-950/40 p-4 backdrop-blur-md relative overflow-hidden group flex-1 flex flex-col justify-end">
+            <div className="rounded-xl border border-gray-200 dark:border-zinc-800 bg-white dark:bg-zinc-950/40 p-4 backdrop-blur-md relative overflow-hidden group flex-1 flex flex-col justify-start">
               <Education />
             </div>
           </div>

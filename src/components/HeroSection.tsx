@@ -73,7 +73,7 @@ export const HeroSection: React.FC = () => {
             {/* Description */}
             <motion.p
               variants={itemVariants}
-              className="text-base md:text-lg text-gray-600 dark:text-zinc-400 max-w-3xl leading-relaxed font-sans"
+              className="text-xl md:text-2xl text-gray-600 dark:text-zinc-400 max-w-3xl leading-relaxed font-sans"
             >
 Computer Science graduate with knowledge of cybersecurity principles, network security, and Security Operations Center (SOC) processes. Familiar with threat monitoring, incident analysis, vulnerability assessment, and basic incident handling through coursework, labs, and personal projects. Committed to continuous learning and professional growth in cybersecurity. Additionally experienced in frontend development, building responsive web applications using React, Vite, and modern UI/UX design principles.            </motion.p>
 
