@@ -1,5 +1,5 @@
 import React from 'react';
-import { Mail, Phone, MapPin, Shield, ShieldAlert, ShieldCheck } from 'lucide-react';
+import { Mail, MapPin, Shield, ShieldAlert, ShieldCheck } from 'lucide-react';
 
 export const Footer: React.FC = () => {
   return (
